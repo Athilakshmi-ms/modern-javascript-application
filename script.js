@@ -1,4 +1,4 @@
-//import Data from "./config.js";
+//import Data from "config.js";
 const searchBar = document.querySelector('#searchBar');
 const container = document.querySelector(".container");
 const cityNameContainer = document.querySelector('.city-name');
