@@ -1,4 +1,4 @@
-//import Data from "config.js";
+import Data from "assets/config.js";
 const searchBar = document.querySelector('#searchBar');
 const container = document.querySelector(".container");
 const cityNameContainer = document.querySelector('.city-name');
@@ -8,7 +8,7 @@ searchBar.addEventListener('keyup', (event) => { // checking the action for spec
     if (event.key === "Enter") {
         const thisCity = event.target.value.toLowerCase(); // Store target in variable
         event.currentTarget.value = '';
-        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${thisCity}&appid=ead2bac0ebab43c42cf82b0aabc58885`)
+        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${thisCity}&appid=${Data.key}`)
             .then(response => response.json())  // Fetching first api to get the City coordinates
             .then(data => {
                 console.log(data)
@@ -18,7 +18,7 @@ searchBar.addEventListener('keyup', (event) => { // checking the action for spec
 
                 // Fetching final data according to the coordinates
                 //fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&cnt=5&units=metric&exclude=minutely,hourly,alerts&appid=" + Data.key)
-                fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=5&units=metric&exclude=minutely,hourly,alerts&appid=ead2bac0ebab43c42cf82b0aabc58885`) 
+                fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=5&units=metric&exclude=minutely,hourly,alerts&appid=${Data.key}`) 
                 .then(response => response.json())
                     .then(result => {
                         console.log('Welcome to this basic weather app. this is not a product but the product of an academic exercise.')
