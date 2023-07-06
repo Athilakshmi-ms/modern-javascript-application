@@ -1,4 +1,5 @@
-import Data from "assets/config.js";
+import Data from "./assets/config.js";
+import {rmvContainerChild} from "./assets/rmvContainerChild.js"
 const searchBar = document.querySelector('#searchBar');
 const container = document.querySelector(".container");
 const cityNameContainer = document.querySelector('.city-name');
@@ -93,9 +94,7 @@ searchBar.addEventListener('keyup', (event) => { // checking the action for spec
             })
             .catch((error) => {
                 console.error('Error:', "not a place!");
-                while (container.firstChild) {
-                    container.removeChild(container.firstChild);
-                };
+                rmvContainerChild(container);
                 return alert("Are you sure you aren't holding your map upside down?");
             });
     };
