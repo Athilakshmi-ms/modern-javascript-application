@@ -1,5 +1,5 @@
-import Data from "./assets/config.js";
-import {rmvContainerChild} from "./assets/rmvContainerChild.js"
+import Data from "../../assets/config.js";
+import {rmvContainerChild} from "../../assets/rmvContainerChild.js"
 const searchBar = document.querySelector('#searchBar');
 const container = document.querySelector(".container");
 const cityNameContainer = document.querySelector('.city-name');
